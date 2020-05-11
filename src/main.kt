@@ -1,13 +1,10 @@
 fun main() {
     println("Bem vindo ao Bytebank");
-    val contaAlex = Conta()
-    contaAlex.titular = "Alex"
-    contaAlex.numero = 1000
+    val contaAlex = Conta(titular = "Alex", numero = 1000)
+
     contaAlex.deposita(-200.0)
 
-    val contaFran = Conta()
-    contaFran.titular = "Fran"
-    contaFran.numero = 1001
+    val contaFran = Conta(numero = 1001, titular = "Fran")
     contaFran.deposita(300.0)
 
     println("Titular: ${contaAlex.titular}")
@@ -60,9 +57,10 @@ fun main() {
 
 }
 
-class Conta {
-    var titular = ""
-    var numero = 0
+class Conta(
+    var titular: String,
+    val numero: Int = 0
+) {
     var saldo = 0.0
         private set
 
@@ -95,13 +93,13 @@ private fun testaCopiasReferencia() {
 //    println("numeroX $numeroX")
 //    println("numeroY $numeroY")
 
-    val contaJoao = Conta()
-    contaJoao.titular = "Joao"
-    var contaMaria = contaJoao
-    contaMaria.titular = "Maria"
-
-    println("titular conta joao: $contaJoao")
-    println("titular conta maria: $contaMaria")
+//    val contaJoao = Conta()
+//    contaJoao.titular = "Joao"
+//    var contaMaria = contaJoao
+//    contaMaria.titular = "Maria"
+//
+//    println("titular conta joao: $contaJoao")
+//    println("titular conta maria: $contaMaria")
 }
 
 
