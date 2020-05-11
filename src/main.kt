@@ -3,12 +3,12 @@ fun main() {
     val contaAlex = Conta()
     contaAlex.titular = "Alex"
     contaAlex.numero = 1000
-    contaAlex.saldo = 100.0
+    contaAlex.deposita(-200.0)
 
     val contaFran = Conta()
     contaFran.titular = "Fran"
     contaFran.numero = 1001
-    contaFran.saldo = 300.0
+    contaFran.deposita(300.0)
 
     println("Titular: ${contaAlex.titular}")
     println("Número.: ${contaAlex.numero}")
@@ -18,19 +18,75 @@ fun main() {
     println("Número.: ${contaFran.numero}")
     println("Saldo..: ${contaFran.saldo}")
 
-    deposita(contaAlex,50.0)
-    println("Saldo..: ${contaAlex.saldo}")
-    contaFran.saldo += 70.0
-
-    println("Deponsitando na conta da Fran..: ${contaAlex.saldo}")
-    deposita(contaFran, valor = 70.0)
-    println("Saldo..: ${contaFran.saldo}")
+//    println("Deponsitando na conto do Alex..: ${contaAlex.saldo}")
+//    contaAlex.deposita(valor = 50.0)
+//    println("Saldo..: ${contaAlex.saldo}")
+//
+//    println("Deponsitando na conta da Fran..: ${contaFran.saldo}")
+//    contaFran.deposita(valor = 70.0)
+//    println("Saldo..: ${contaFran.saldo}")
+//
+//    println("sacando na conta do alex")
+//    contaAlex.saca(250.0)
+//    println(contaAlex.saldo)
+//
+//    println("sacando na conta da fran")
+//    contaFran.saca(valor = 100.0)
+//    println(contaFran.saldo)
+//
+//    println("saque em excesso na conda do alex")
+//    contaAlex.saca(valor = 100.0)
+//    println(contaAlex.saldo)
+//
+//    println("saque em excesso na conta Da fran")
+//    contaFran.saca(valor = 500.0)
+//    println(contaFran.saldo)
+//
+//    println("*=======Saldo antes da transferencia====*")
+//    println("Conta alex ${contaAlex.saldo}")
+//    println("Conta fran ${contaFran.saldo}")
+//    println("*=======================================*")
+//
+//    println("Transferencia da conta da Fran para o Alex")
+//    if (contaFran.transfere(valor = 100.0, destino = contaAlex)) {
+//        println("Transferencia realizada")
+//    } else {
+//        println("Falha na transferencia")
+//    }
+//    println("*==========Saldo depois do saque========*")
+//    println("Conta alex ${contaAlex.saldo}")
+//    println("Conta fran ${contaFran.saldo}")
+//    println("*=======================================*")
 
 }
 
-fun deposita(conta: Conta, valor: Double) {
-    conta.saldo += valor
+class Conta {
+    var titular = ""
+    var numero = 0
+    var saldo = 0.0
+        private set
+
+    fun deposita(valor: Double) {
+        if (valor > 0) {
+            this.saldo += valor
+        }
+    }
+
+    fun saca(valor: Double) {
+        if (this.saldo >= valor) {
+            this.saldo -= valor
+        }
+    }
+
+    fun transfere(valor: Double, destino: Conta): Boolean {
+        if (this.saldo >= valor) {
+            saldo -= valor
+            destino.saldo += valor
+            return true
+        } else return false
+    }
 }
+
 
 private fun testaCopiasReferencia() {
     val numeroX = 10
@@ -48,11 +104,6 @@ private fun testaCopiasReferencia() {
     println("titular conta maria: $contaMaria")
 }
 
-class Conta {
-    var titular = ""
-    var numero = 0
-    var saldo = 0.0
-}
 
 private fun testaLacos() {
     var i = 0
