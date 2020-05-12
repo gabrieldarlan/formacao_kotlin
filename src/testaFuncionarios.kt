@@ -13,7 +13,7 @@ fun testaFuncionarios() {
     println("Salário: ${gerente.salario}")
     println("Gerente bonificação ${gerente.bonificacao}")
 
-    if (gerente.autenticacao(senha = 111)) {
+    if (gerente.autentica(senha = 111)) {
         println("Autenticou com sucesso")
     } else {
         println("falha na autenticacao")
