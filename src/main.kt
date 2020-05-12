@@ -30,6 +30,28 @@ fun main() {
     } else {
         println("falha na autenticacao")
     }
+
+    var diretor = Diretor(
+        nome = "Darlan",
+        cpf = "11111111111",
+        salario = 4000.0,
+        senha = 112,
+        plr = 2220.0
+    )
+    println()
+    println("Nome: ${diretor.nome}")
+    println("CPF: ${diretor.cpf}")
+    println("Salário: ${diretor.salario}")
+    println("PLR: ${diretor.plr}" )
+    println("Gerente bonificação ${diretor.bonificacao()}")
+
+    if (diretor.autenticacao(senha = 112)) {
+        println("Autenticou com sucesso")
+    } else {
+        println("falha na autenticacao")
+    }
+
+
 }
 
 
