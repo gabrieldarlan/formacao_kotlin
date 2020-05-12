@@ -1,58 +1,29 @@
 fun main() {
     println("Bem vindo ao Bytebank");
 
-    val funcionario = Funcionario(
-        nome = "Gabriel",
-        cpf = "39562057828",
-        salario = 1000.0
+    val contaCorrente = ContaCorrente(
+        titular = "Gabriel",
+        numero = 1000
     )
-
-    println("Nome: ${funcionario.nome}")
-    println("CPF: ${funcionario.cpf}")
-    println("Salário: ${funcionario.salario}")
-
-    println("bonificação ${funcionario.bonificacao()}")
-
-    var gerente = Gerente(
-        nome = "Jaqueline",
-        cpf = "222.222.222-22",
-        salario = 2000.0,
-        senha = 111
+    var contaPoupanca = ContaPoupanca(
+        titular = "Samara",
+        numero = 1001
     )
-    println()
-    println("Nome: ${gerente.nome}")
-    println("CPF: ${gerente.cpf}")
-    println("Salário: ${gerente.salario}")
-    println("Gerente bonificação ${gerente.bonificacao()}")
+    contaCorrente.deposita(1000.0)
+    contaPoupanca.deposita(1000.0)
+    println("saldo corrente ${contaCorrente.saldo}")
+    println("saldo poupança ${contaPoupanca.saldo}")
+    contaCorrente.saca(100.0)
+    contaPoupanca.saca(100.0)
+    println("saldo após saque corrente ${contaCorrente.saldo}")
+    println("saldo após saque poupança ${contaPoupanca.saldo}")
 
-    if (gerente.autenticacao(senha = 111)) {
-        println("Autenticou com sucesso")
-    } else {
-        println("falha na autenticacao")
-    }
+    contaCorrente.transfere(100.0, contaPoupanca)
+    println("saldo corrente após transferir para poupança ${contaCorrente.saldo}")
+    println("saldo poupança após receber transferência ${contaPoupanca.saldo}")
 
-    var diretor = Diretor(
-        nome = "Darlan",
-        cpf = "11111111111",
-        salario = 4000.0,
-        senha = 112,
-        plr = 2220.0
-    )
-    println()
-    println("Nome: ${diretor.nome}")
-    println("CPF: ${diretor.cpf}")
-    println("Salário: ${diretor.salario}")
-    println("PLR: ${diretor.plr}" )
-    println("Gerente bonificação ${diretor.bonificacao()}")
-
-    if (diretor.autenticacao(senha = 112)) {
-        println("Autenticou com sucesso")
-    } else {
-        println("falha na autenticacao")
-    }
-
+    contaPoupanca.transfere(200.0,contaCorrente)
+    println("saldo poupança após transferir para corrente ${contaPoupanca.saldo}")
+    println("saldo corrente após receber transferência ${contaCorrente.saldo}")
 
 }
-
-
-
