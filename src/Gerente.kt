@@ -12,7 +12,7 @@ class Gerente(
     override val bonificacao: Double
         get() {
             println("bonificação gerente")
-            return super.bonificacao + this.salario
+            return this.salario
         }
 
     fun autenticacao(senha: Int): Boolean {

@@ -1,4 +1,4 @@
-class Analista(
+class Auxiliar(
     nome: String,
     cpf: String,
     salario: Double
@@ -8,9 +8,6 @@ class Analista(
     salario = salario
 ) {
     override val bonificacao: Double
-        get() {
-            println("bonificacao analista")
-            return this.salario * 0.1
-        }
+        get() = this.salario * 0.05
 
 }
