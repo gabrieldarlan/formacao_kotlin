@@ -33,12 +33,6 @@ fun testaFuncionarios() {
     println("PLR: ${diretor.plr}")
     println("Gerente bonificação ${diretor.bonificacao}")
 
-    if (diretor.autenticacao(senha = 112)) {
-        println("Autenticou com sucesso")
-    } else {
-        println("falha na autenticacao")
-    }
-
     var analista = Analista(
         nome = "Maria",
         cpf = "444.444.444-44",
