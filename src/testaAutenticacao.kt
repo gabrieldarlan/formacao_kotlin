@@ -13,6 +13,12 @@ private fun testaAutenticacao() {
         plr = 200.0
     )
 
+    var cliente = Cliente(
+        nome="Darlan",
+        cpf = "12321312312",
+        senha = 123
+    )
+
     val sistemaInterno = SistemaInterno()
     sistemaInterno.entra(gerente, 1000)
     sistemaInterno.entra(diretor, 1000)
