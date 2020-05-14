@@ -1,8 +1,8 @@
 package br.com.alura.modelo
 
 abstract class Conta(
-    var titular: String,
-    var numero: Int = 0
+    var titular: Cliente,
+    val numero: Int
 ) {
     var saldo = 0.0
         protected set

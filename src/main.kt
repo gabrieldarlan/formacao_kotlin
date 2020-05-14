@@ -1,9 +1,8 @@
-import novomodelo.Cliente as NovoCliente
+import br.com.alura.teste.testaComportamentosConta
+import br.com.alura.teste.testaContasDiferentes
 
 fun main() {
-    val palavra: kotlin.String = ""
-    val clienteNovo = NovoCliente()
-
+   testaContasDiferentes()
 }
 
 

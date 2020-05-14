@@ -1,15 +1,33 @@
 package br.com.alura.teste
 
+import br.com.alura.modelo.Cliente
 import br.com.alura.modelo.ContaCorrente
 import br.com.alura.modelo.ContaPoupanca
+import br.com.alura.modelo.Endereco
 
 fun testaContasDiferentes() {
+
+    val gabriel = Cliente(
+        nome = "Gabriel",
+        cpf = "12312312",
+        senha = 1,
+        endereco = Endereco(
+            logradouro = "Rua Nena",
+            numero = 18,
+            bairro = "Vila Crett",
+            cidade = "Carapicuíba",
+            estado = "São Paulo",
+            cep = "06386-310",
+            complemento = "Casa 1"
+        )
+    )
+    val jaqueline = Cliente(nome = "Jaq", cpf = "809809809", senha = 2)
     val contaCorrente = ContaCorrente(
-        titular = "Gabriel",
+        titular = gabriel,
         numero = 1000
     )
     var contaPoupanca = ContaPoupanca(
-        titular = "Samara",
+        titular = jaqueline,
         numero = 1001
     )
     contaCorrente.deposita(1000.0)
@@ -28,4 +46,12 @@ fun testaContasDiferentes() {
     contaPoupanca.transfere(200.0, contaCorrente)
     println("saldo poupança após transferir para corrente ${contaPoupanca.saldo}")
     println("saldo corrente após receber transferência ${contaCorrente.saldo}")
+
+    println("*============ENDERECO DO GABRIEL==================*")
+    println(gabriel.endereco.logradouro)
+    println(gabriel.endereco.numero)
+    println(gabriel.endereco.bairro)
+    println(gabriel.endereco.cep)
+    println(gabriel.endereco.cidade)
+    println(gabriel.endereco.estado)
 }
