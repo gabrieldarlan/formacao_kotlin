@@ -1,4 +1,11 @@
-private fun testaAutenticacao() {
+package br.com.alura.teste
+
+import br.com.alura.modelo.Cliente
+import br.com.alura.modelo.Diretor
+import br.com.alura.modelo.Gerente
+import br.com.alura.modelo.SistemaInterno
+
+fun testaAutenticacao() {
     val gerente = Gerente(
         nome = "Gabriel",
         cpf = "111.111.111-11",
@@ -14,7 +21,7 @@ private fun testaAutenticacao() {
     )
 
     var cliente = Cliente(
-        nome="Darlan",
+        nome = "Darlan",
         cpf = "12321312312",
         senha = 123
     )
@@ -22,4 +29,5 @@ private fun testaAutenticacao() {
     val sistemaInterno = SistemaInterno()
     sistemaInterno.entra(gerente, 1000)
     sistemaInterno.entra(diretor, 1000)
+
 }

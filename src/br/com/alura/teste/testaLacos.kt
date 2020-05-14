@@ -1,3 +1,5 @@
+package br.com.alura.teste
+
 private fun testaLacos() {
     var i = 0
     while (i < 5) {

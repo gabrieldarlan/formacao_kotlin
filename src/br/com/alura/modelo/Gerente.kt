@@ -1,18 +1,21 @@
-class Diretor(
+package br.com.alura.modelo
+
+class Gerente(
     nome: String,
     cpf: String,
     salario: Double,
-    senha: Int,
-    val plr: Double
+    senha: Int
 ) : FuncionarioAdmin(
     nome = nome,
     cpf = cpf,
     salario = salario,
     senha = senha
-){
+) {
+
+
     override val bonificacao: Double
         get() {
-            println("bonificacao diretor")
-            return salario + plr
+            println("bonificação gerente")
+            return this.salario
         }
 }

@@ -1,3 +1,8 @@
+package br.com.alura.teste
+
+import br.com.alura.modelo.ContaCorrente
+import br.com.alura.modelo.ContaPoupanca
+
 private fun testaComportamentosConta() {
     val contaAlex = ContaPoupanca(titular = "Alex", numero = 1000)
 
@@ -38,8 +43,8 @@ private fun testaComportamentosConta() {
     println(contaFran.saldo)
 
     println("*=======Saldo antes da transferencia====*")
-    println("Conta alex ${contaAlex.saldo}")
-    println("Conta fran ${contaFran.saldo}")
+    println("br.com.alura.modelo.Conta alex ${contaAlex.saldo}")
+    println("br.com.alura.modelo.Conta fran ${contaFran.saldo}")
     println("*=======================================*")
 
     println("Transferencia da conta da Fran para o Alex")
@@ -49,7 +54,7 @@ private fun testaComportamentosConta() {
         println("Falha na transferencia")
     }
     println("*==========Saldo depois do saque========*")
-    println("Conta alex ${contaAlex.saldo}")
-    println("Conta fran ${contaFran.saldo}")
+    println("br.com.alura.modelo.Conta alex ${contaAlex.saldo}")
+    println("br.com.alura.modelo.Conta fran ${contaFran.saldo}")
     println("*=======================================*")
 }

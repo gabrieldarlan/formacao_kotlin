@@ -1,3 +1,6 @@
+package br.com.alura.teste
+
+import br.com.alura.modelo.*
 
 fun testaFuncionarios() {
 
@@ -11,7 +14,7 @@ fun testaFuncionarios() {
     println("Nome: ${gerente.nome}")
     println("CPF: ${gerente.cpf}")
     println("Salário: ${gerente.salario}")
-    println("Gerente bonificação ${gerente.bonificacao}")
+    println("br.com.alura.modelo.Gerente bonificação ${gerente.bonificacao}")
 
     if (gerente.autentica(senha = 111)) {
         println("Autenticou com sucesso")
@@ -31,7 +34,7 @@ fun testaFuncionarios() {
     println("CPF: ${diretor.cpf}")
     println("Salário: ${diretor.salario}")
     println("PLR: ${diretor.plr}")
-    println("Gerente bonificação ${diretor.bonificacao}")
+    println("br.com.alura.modelo.Gerente bonificação ${diretor.bonificacao}")
 
     var analista = Analista(
         nome = "Maria",

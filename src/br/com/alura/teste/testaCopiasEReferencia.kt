@@ -1,4 +1,4 @@
-
+package br.com.alura.teste
 private fun testaCopiasEReferencia() {
     val numeroX = 10
     var numeroY = numeroX
@@ -6,7 +6,7 @@ private fun testaCopiasEReferencia() {
 //    println("numeroX $numeroX")
 //    println("numeroY $numeroY")
 
-//    val contaJoao = Conta()
+//    val contaJoao = br.com.alura.modelo.Conta()
 //    contaJoao.titular = "Joao"
 //    var contaMaria = contaJoao
 //    contaMaria.titular = "Maria"

@@ -1,3 +1,5 @@
+package br.com.alura.modelo
+
 abstract class FuncionarioAdmin(
     nome: String,
     cpf: String,
@@ -7,8 +9,8 @@ abstract class FuncionarioAdmin(
     nome = nome,
     cpf = cpf,
     salario = salario
-) {
-    fun autentica(senha: Int): Boolean {
+) , Autenticavel {
+    override fun autentica(senha: Int): Boolean {
         if (this.senha == senha)
             return true
         return false
