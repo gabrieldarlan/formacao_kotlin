@@ -1,8 +1,8 @@
-package br.com.alura.teste
+package br.com.alura.bytebank.teste
 
-import br.com.alura.modelo.Cliente
-import br.com.alura.modelo.ContaCorrente
-import br.com.alura.modelo.ContaPoupanca
+import br.com.alura.bytebank.modelo.Cliente
+import br.com.alura.bytebank.modelo.ContaCorrente
+import br.com.alura.bytebank.modelo.ContaPoupanca
 
 fun testaComportamentosConta() {
     val gabriel = Cliente(nome = "Gabriel", cpf = "12312312", senha = 1)

@@ -1,4 +1,4 @@
-package br.com.alura.teste
+package br.com.alura.bytebank.teste
 private fun testaCopiasEReferencia() {
     val numeroX = 10
     var numeroY = numeroX
